@@ -17,10 +17,36 @@ let actions = {
             id: id
         }
     },
-    createNewUserId: function(min, max) {
+    createNewUserId: function(min = 1, max = 100) {
+        // do some async server call
+        // onSuccess: dispatch({ type:... })
         return {
             type: "CREATE_USER_ID",
             id: Math.floor(Math.random() * (max - min)) + min
+        }
+    },
+    createNewUserIdIfOdd: function() {
+        return (dispatch, getState) => {
+            const { user } = getState()
+
+            if (user.memberId % 2 === 0){
+                return
+            }
+            dispatch(actions.createNewUserId())
+        }
+    },
+    createNewUserIdAsync: function() {
+        return (dispatch) => {
+            // something can do example below
+            // $.get('url', {
+            //     success: (res) => {
+            //         dispatch(actions.createNewUserId())
+            //     }
+            // })
+
+            setTimeout(() => {
+                dispatch(actions.createNewUserId())
+            }, 2000)
         }
     }
 }

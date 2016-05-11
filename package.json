@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/CityRay/React15-Todo-List"
   },
   "author": "Ray Lin",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"

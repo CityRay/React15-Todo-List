@@ -1,0 +1,21 @@
+/*
+* @Author: RayLin
+* @Date:   2016-05-11 17:59:30
+* @Last Modified by:   RayLin
+* @Last Modified time: 2016-05-11 18:08:03
+*/
+
+html, body {
+  height: 100%;
+}
+
+html {
+  background: #eee;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
