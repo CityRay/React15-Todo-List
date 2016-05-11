@@ -6,6 +6,7 @@ import actions from '../redux/actions'
 
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'
+import UserInfo from './UserInfo'
 
 
 class App extends Component {
@@ -14,6 +15,8 @@ class App extends Component {
         return (
             <div>
                 <h1>Todo List</h1>
+                <UserInfo createNewUserId={this.props.actions.createNewUserId} user={this.props.user} />
+                <br />
                 <TodoInput addTodo={this.props.actions.addTodo} />
                 <TodoList actions={this.props.actions} todos={this.props.todos} />
             </div>
@@ -21,12 +24,12 @@ class App extends Component {
     }
 }
 
-// bind state
+// bind state 到 props
 function mapStateToProps(state) {
     return state
 }
 
-// bind dispatch & actions，連接之後不用再寫 this.props.dispatch，直接傳 actions to child
+// bind dispatch & actions 到 props，連接之後不用再寫 this.props.dispatch，直接傳 actions to child
 // Child 不用再 import actions
 function mapDispatchToProps(dispatch) {
     return {

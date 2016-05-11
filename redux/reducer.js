@@ -1,3 +1,7 @@
+// =======================
+// NOTICE ===> OLD NO NEED
+// =======================
+
 function getId(state) {
     return state.todos.reduce((maxId, todo) => {
         return Math.max(todo.id, maxId)
@@ -32,6 +36,14 @@ let reducer = function(state, action) {
                 todos: state.todos.filter((todo) => {
                     return todo.id !== action.id
                 })
+            })
+
+        case 'CREATE_USER_ID':
+            return Object.assign({}, state, {
+                user: {
+                    username: state.user.username,
+                    memberId: action.id
+                }
             })
 
         default:

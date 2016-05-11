@@ -16,6 +16,12 @@ let actions = {
             type: "DEL_TODO",
             id: id
         }
+    },
+    createNewUserId: function(min, max) {
+        return {
+            type: "CREATE_USER_ID",
+            id: Math.floor(Math.random() * (max - min)) + min
+        }
     }
 }
 

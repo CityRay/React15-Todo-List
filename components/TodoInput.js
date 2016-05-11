@@ -11,7 +11,14 @@ class TodoInput extends Component {
 
     _handleSubmit(event) {
         event.preventDefault()
-        this.props.addTodo(this.state.inputText)
+        if(this.state.inputText){
+            this.props.addTodo(this.state.inputText)
+
+            this.setState({inputText: ''})
+        }else{
+            console.warn('inputText is null');
+        }
+
     }
 
     render() {
