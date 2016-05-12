@@ -18,8 +18,8 @@ npm install
 npm run serve
 ```
 
-### Link React
+### Lint React
 
 ```javascript
-npm run link
+npm run lint
 ```
