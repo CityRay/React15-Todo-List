@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 class TextDisplay extends Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props)
 
+        this.onClick = this.onClick.bind(this)
     }
 
-    _handleClick() {
-        //console.log('delete');
-        this.props.onDeleteLetter();
+    onClick() {
+        this.props.onDeleteLetter()
     }
 
     render() {
@@ -17,10 +17,10 @@ class TextDisplay extends Component {
                 <div>
                     Displaying text from my parent: {this.props.text}
                 </div>
-                <button onClick={this._handleClick.bind(this)}>Delete one Letter</button>
+                <button onClick={this.onClick}>Delete one Letter</button>
             </div>
         )
     }
 }
 
-export default TextDisplay;
+export default TextDisplay

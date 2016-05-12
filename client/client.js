@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 
 // configure and create our store
 // createStore(reducres, initialState)
-let initialState = {
+const initialState = {
     todos: [
         {
             id: 0,
@@ -30,7 +30,7 @@ const root = (
     </Provider>
 )
 
-//Render
+// Render
 render(
     root,
     document.getElementById('app')
