@@ -8,7 +8,6 @@ This is a simple todo list app built with React, Redux, Webpack and Eslint.
 - Redux Logger v2.6.1
 - Eslint v2.9.0
 - Webpack v1.12.13
--
 
 
 ### Install
