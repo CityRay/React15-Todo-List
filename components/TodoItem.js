@@ -18,7 +18,7 @@ class TodoItem extends Component {
 
     render() {
         return (
-            <li>
+            <li className="todo__item">
                 <div>{this.props.todo.text}</div>
                 <button onClick={this.onComplete}>completed</button>
                 <button onClick={this.onDelete}>delete</button>

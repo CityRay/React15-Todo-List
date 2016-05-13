@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import actions from '../redux/actions'
+import { actions } from '../redux/actions'
 
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'

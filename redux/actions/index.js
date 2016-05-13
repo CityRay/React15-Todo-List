@@ -1,19 +1,24 @@
+const ADD_TODO = 'ADD_TODO'
+const COMPLETE_TODO = 'COMPLETE_TODO'
+const DEL_TODO = 'DEL_TODO'
+const CREATE_USER_ID = 'CREATE_USER_ID'
+
 const actions = {
     addTodo: function addTodo(text) {
         return {
-            type: 'ADD_TODO',
+            type: ADD_TODO,
             text
         }
     },
     completeTodo: function completeTodo(id) {
         return {
-            type: 'COMPLETE_TODO',
+            type: COMPLETE_TODO,
             id
         }
     },
     delTodo: function delTodo(id) {
         return {
-            type: 'DEL_TODO',
+            type: DEL_TODO,
             id
         }
     },
@@ -21,7 +26,7 @@ const actions = {
         // do some async server call
         // onSuccess: dispatch({ type:... })
         return {
-            type: 'CREATE_USER_ID',
+            type: CREATE_USER_ID,
             id: Math.floor(Math.random() * (max - min)) + min
         }
     },
@@ -51,5 +56,11 @@ const actions = {
     }
 }
 
-export default actions
+export {
+    actions,
+    ADD_TODO,
+    COMPLETE_TODO,
+    DEL_TODO,
+    CREATE_USER_ID
+}
 // dispatch(addTodo('some text'))

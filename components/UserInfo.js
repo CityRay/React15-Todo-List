@@ -9,6 +9,11 @@ class UserInfo extends Component {
         this.onNewIdAsync = this.onNewIdAsync.bind(this)
     }
 
+    // shouldComponentUpdate(nextProps) {
+    //     // console.log(nextProps)
+    //     return true
+    // }
+
     onNewId(e) {
         e.preventDefault()
         this.props.actions.createNewUserId(1, 1000)
@@ -26,15 +31,17 @@ class UserInfo extends Component {
 
     render() {
         return (
-            <li>
+            <div className="user-info">
                 <div>username: {this.props.user.username}</div>
                 <div>memberId: {this.props.user.memberId}</div>
                 <button onClick={this.onNewId}>Update with random ID</button>
                 <button onClick={this.onNewIdIfOdd}>Update If Odd</button>
                 <button onClick={this.onNewIdAsync}>Update async</button>
-            </li>
+            </div>
         )
     }
+
+// Class End
 }
 
 UserInfo.propTypes = {

@@ -27,6 +27,7 @@ class TodoInput extends Component {
                 <form onSubmit={this.onSubmit}>
                     <input
                         type="text"
+                        className="todo__entry"
                         placeholder="Type something..."
                         value={this.state.inputText}
                         onChange={(e) => { this.setState({ inputText: e.target.value }) }}

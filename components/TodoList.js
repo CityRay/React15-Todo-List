@@ -19,7 +19,7 @@ class TodoList extends Component {
 
     render() {
         return (
-            <ul>
+            <ul className="todo__list">
                 {
                     this.props.todos.map((todo) => {
                         return <TodoItem key={todo.id} todo={todo} actions={this.props.actions} />

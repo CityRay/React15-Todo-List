@@ -1,3 +1,5 @@
+import { ADD_TODO, COMPLETE_TODO, DEL_TODO } from '../actions'
+
 function getId(todos) {
     return todos.reduce((maxId, todo) => {
         return Math.max(todo.id, maxId)
@@ -8,21 +10,21 @@ function getId(todos) {
 // Reducer 接收舊 state 與 action 並回傳一個新的 state
 const todoReducer = function todoReducer(todos = [], action) {
     switch (action.type) {
-    case 'ADD_TODO':
-        console.log(todos)
+    case ADD_TODO:
+        // console.log(todos)
         return [{
             text: action.text,
             completed: false,
             id: getId(todos)
         }, ...todos]
 
-    case 'COMPLETE_TODO':
+    case COMPLETE_TODO:
         return todos.map((todo) => {
             return todo.id === action.id ?
                 Object.assign({}, todo, { completed: !todo.completed }) : todo
         })
 
-    case 'DEL_TODO':
+    case DEL_TODO:
         return todos.filter((todo) => {
             return todo.id !== action.id
         })
