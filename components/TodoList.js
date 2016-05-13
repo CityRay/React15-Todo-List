@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import TodoItem from './TodoItem'
 
 class TodoList extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            tmp: ''
+        }
+    }
 
     // _handleDel(id, event) {
     //     event.preventDefault();
@@ -23,4 +30,8 @@ class TodoList extends Component {
     }
 }
 
+TodoList.propTypes = {
+    actions: React.PropTypes.objectOf(React.PropTypes.func),
+    todos: React.PropTypes.array
+}
 export default TodoList

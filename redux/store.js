@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 
 // TODO: add middleware
 
-let finalCreateStore = compose(
+const finalCreateStore = compose(
         applyMiddleware(thunk, logger())
     )(createStore)
 

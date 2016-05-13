@@ -1,41 +1,41 @@
-let actions = {
-    addTodo: function(text) {
+const actions = {
+    addTodo: function addTodo(text) {
         return {
-            type: "ADD_TODO",
-            text: text
+            type: 'ADD_TODO',
+            text
         }
     },
-    completeTodo: function(id) {
+    completeTodo: function completeTodo(id) {
         return {
-            type: "COMPLETE_TODO",
-            id: id
+            type: 'COMPLETE_TODO',
+            id
         }
     },
-    delTodo: function(id) {
+    delTodo: function delTodo(id) {
         return {
-            type: "DEL_TODO",
-            id: id
+            type: 'DEL_TODO',
+            id
         }
     },
-    createNewUserId: function(min = 1, max = 100) {
+    createNewUserId: function createNewUserId(min = 1, max = 100) {
         // do some async server call
         // onSuccess: dispatch({ type:... })
         return {
-            type: "CREATE_USER_ID",
+            type: 'CREATE_USER_ID',
             id: Math.floor(Math.random() * (max - min)) + min
         }
     },
-    createNewUserIdIfOdd: function() {
+    createNewUserIdIfOdd: function createNewUserIdIfOdd() {
         return (dispatch, getState) => {
             const { user } = getState()
 
-            if (user.memberId % 2 === 0){
+            if (user.memberId % 2 === 0) {
                 return
             }
             dispatch(actions.createNewUserId())
         }
     },
-    createNewUserIdAsync: function() {
+    createNewUserIdAsync: function createNewUserIdAsync() {
         return (dispatch) => {
             // something can do example below
             // $.get('url', {
@@ -52,4 +52,4 @@ let actions = {
 }
 
 export default actions
-//dispatch(addTodo('some text'))
+// dispatch(addTodo('some text'))

@@ -37,4 +37,8 @@ class UserInfo extends Component {
     }
 }
 
+UserInfo.propTypes = {
+    actions: React.PropTypes.objectOf(React.PropTypes.func),
+    user: React.PropTypes.object
+}
 export default UserInfo

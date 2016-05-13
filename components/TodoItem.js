@@ -27,4 +27,8 @@ class TodoItem extends Component {
     }
 }
 
+TodoItem.propTypes = {
+    actions: React.PropTypes.objectOf(React.PropTypes.func),
+    todo: React.PropTypes.object
+}
 export default TodoItem

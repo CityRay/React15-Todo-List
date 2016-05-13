@@ -10,6 +10,13 @@ import UserInfo from './UserInfo'
 
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            tmp: ''
+        }
+    }
 
     render() {
         return (
@@ -24,6 +31,12 @@ class App extends Component {
     }
 }
 
+App.propTypes = {
+    actions: React.PropTypes.object,
+    todos: React.PropTypes.array,
+    user: React.PropTypes.object
+}
+
 // bind state 到 props
 function mapStateToProps(state) {
     return state
@@ -36,5 +49,6 @@ function mapDispatchToProps(dispatch) {
         actions: bindActionCreators(actions, dispatch)
     }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

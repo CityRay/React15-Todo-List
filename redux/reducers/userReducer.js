@@ -1,13 +1,13 @@
-let userReducer = function(user = {}, action) {
+const userReducer = function userReducer(user = {}, action) {
     switch (action.type) {
-        case 'CREATE_USER_ID':
-            return {
-                username: user.username,
-                memberId: action.id
-            }
+    case 'CREATE_USER_ID':
+        return {
+            username: user.username,
+            memberId: action.id
+        }
 
-        default:
-            return user;
+    default:
+        return user
     }
 }
 
