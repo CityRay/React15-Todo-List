@@ -32,5 +32,5 @@ npm run lint
 ```
 
 ### Redux DevTools
-[redux-devtools](https://github.com/gaearon/redux-devtools)
-[Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+- [Redux DevTools](https://github.com/gaearon/redux-devtools)
+- [Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
