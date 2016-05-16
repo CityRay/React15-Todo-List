@@ -11,6 +11,7 @@ class TodoInput extends Component {
     }
 
     shouldComponentUpdate() {
+        // component has no props or state change so it is safe to just return `false`
         return false
     }
 
