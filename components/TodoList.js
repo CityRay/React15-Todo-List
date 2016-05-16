@@ -10,6 +10,10 @@ class TodoList extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps) {
+        return !(this.props.todos.length === nextProps.todos.length)
+    }
+
     // _handleDel(id, event) {
     //     event.preventDefault();
     //     console.log(id);

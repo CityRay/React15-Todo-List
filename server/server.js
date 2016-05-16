@@ -20,10 +20,12 @@ app.use('/', function (req, res) {
     res.sendFile(path.resolve('client/index.html'));
 });
 
-var port = 3000;
+
+var port = +(process.argv[2]) || 3000;
 
 app.listen(port, function(error) {
   if (error) throw error;
   console.log("Express server listening on port", port);
-  console.log("http://localhost:", port);
+  console.log("http://localhost:" + port);
+  require("openurl").open("http://localhost:" + port);
 });

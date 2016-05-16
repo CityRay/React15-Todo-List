@@ -10,12 +10,28 @@ class TodoInput extends Component {
         }
     }
 
+    shouldComponentUpdate() {
+        return false
+    }
+
     onSubmit(event) {
         event.preventDefault()
-        if (this.state.inputText) {
-            this.props.addTodo(this.state.inputText)
 
-            this.setState({ inputText: '' })
+        // Method 1
+        // if (this.state.inputText) {
+        //     this.props.addTodo(this.state.inputText)
+
+        //     this.setState({ inputText: '' })
+        // } else {
+        //     console.warn('inputText is null')
+        // }
+
+        // Method 2
+        const input = this.refs.todoInput
+        const value = input.value.trim()
+        if (value) {
+            this.props.addTodo(value)
+            input.value = ''
         } else {
             console.warn('inputText is null')
         }
@@ -25,12 +41,22 @@ class TodoInput extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
+                    {/* Mthod 1
                     <input
                         type="text"
                         className="todo__entry"
                         placeholder="Type something..."
                         value={this.state.inputText}
                         onChange={(e) => { this.setState({ inputText: e.target.value }) }}
+                    />
+                    */}
+
+                    {/* Method 2 */}
+                    <input
+                        type="text"
+                        className="todo__entry"
+                        placeholder="Type something..."
+                        ref="todoInput"
                     />
                     <input type="submit" value="SEND" />
                 </form>
