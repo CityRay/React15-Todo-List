@@ -12,6 +12,7 @@ import UserInfo from './UserInfo'
 class App extends Component {
     constructor(props) {
         super(props)
+        console.log('App Component')
 
         this.state = {
             tmp: ''
