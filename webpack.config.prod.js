@@ -1,5 +1,7 @@
 var webpack = require('webpack'),
-    path = require("path");
+    path = require("path"),
+    // Strip console.log or console.warn
+    WebpackStrip = require('strip-loader');
 
 module.exports = {
     entry: './client/client.js',
@@ -18,11 +20,22 @@ module.exports = {
                 loader: 'babel',
                 exclude: /(node_modules|bower_components)/,
                 query: {
-                    presets: ['react', 'es2015']
+                    presets: ['react', 'es2015'],
+                    plugins: ['transform-runtime']
                 }
+            },
+            {
+                test: /\.js$/,
+                loader: WebpackStrip.loader('debug', 'console.log', 'console.warn'),
+                exclude: /(node_modules|bower_components)/,
             }
         ]
     },
+    // externals: {
+    //     // don't bundle the 'react' npm package with our bundle.js
+    //     // but get it from a global 'React' variable
+    //     'react': 'React'
+    // },
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
