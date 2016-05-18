@@ -2,16 +2,17 @@
 * @Author: RayLin
 * @Date:   2016-05-17 18:25:23
 * @Last Modified by:   RayLin
-* @Last Modified time: 2016-05-18 10:31:38
+* @Last Modified time: 2016-05-18 10:42:13
 */
 
 import React from 'react'
 import UserInfo from '../../components/UserInfo'
+import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
 
 describe('(Container) UserInfo', () => {
 
-    it('renders as a <div>', () => {
+    it('Check props data!', () => {
         const props = {
             user: {
                 username: 'ray',
