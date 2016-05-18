@@ -8,7 +8,8 @@ This is a simple todo list app built with React, Redux, Webpack and Eslint.
 - Redux Logger v2.6.1
 - Eslint v2.9.0
 - Webpack v1.12.13
-
+- Enzyme v2.3.0
+- Mocha v2.4.5
 
 ### Install
 
@@ -30,6 +31,19 @@ open browser http://localhost:3000/
 npm run lint
 ```
 
+### Build Project
+
+```javascript
+npm run build
+```
+
 ### Redux DevTools
 - [Redux DevTools](https://github.com/gaearon/redux-devtools)
 - [Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
+### Test Project
+Enzyme, Mocha
+
+```javascript
+npm run test:watch
+```
