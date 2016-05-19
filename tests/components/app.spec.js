@@ -2,27 +2,29 @@
 * @Author: RayLin
 * @Date:   2016-05-17 18:25:23
 * @Last Modified by:   RayLin
-* @Last Modified time: 2016-05-18 10:42:13
+* @Last Modified time: 2016-05-19 16:00:55
 */
 
 import React from 'react'
-import UserInfo from '../../components/UserInfo'
+import App from '../../components/TodoItem'
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
 
-describe('(Container) UserInfo', () => {
+describe('(Container) App', () => {
 
-    it('Check props data!', () => {
+    it('Check TodoItem Content!', () => {
         const props = {
-            user: {
-                username: 'ray',
-                memberId: 69
+            actions:{
+
+            },
+            todo:{
+                text: "test"
             }
         }
 
-        const wrapper = mount(<UserInfo {...props} />);
-        expect(wrapper.props().user.username).to.equal("ray");
-        expect(wrapper.props().user.memberId).to.equal(69);
+        const wrapper = mount(<App {...props} />);
+        expect(wrapper.find('.todo__item')).to.have.length(1);
+        expect(wrapper.find('button')).to.have.length(2);
     });
 
 });
