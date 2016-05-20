@@ -6,7 +6,7 @@
     "build": "webpack --config webpack.config.prod.js --progress -p",
     "serve": "nodemon server/server.js --ignore components 8080",
     "lint": "./node_modules/.bin/eslint client/*.js components/*.js",
-    "test-old": "mocha --compilers js:babel-register tests/**/*.spec.js --require ./tests/test_helper.js --recursive",
+    "test-nojsdom": "mocha --compilers js:babel-register tests/**/*.spec.js --require ./tests/test_helper.js --recursive",
     "test": "mocha tests/.setup.js tests/**/*.spec.js",
     "test:watch": "npm test -- --watch"
   },
