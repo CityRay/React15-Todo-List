@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+// import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../redux/actions'
@@ -8,28 +8,33 @@ import TodoInput from './TodoInput'
 import TodoList from './TodoList'
 import UserInfo from './UserInfo'
 
-
-class App extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            tmp: ''
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Todo List</h1>
-                <UserInfo actions={this.props.actions} user={this.props.user} />
-                <br />
-                <TodoInput addTodo={this.props.actions.addTodo} />
-                <TodoList actions={this.props.actions} todos={this.props.todos} />
-            </div>
-        )
-    }
+// Stateless Functional Components
+const App = (props) => {
+    return (
+        <div>
+            <h1>Todo List</h1>
+            <UserInfo actions={props.actions} user={props.user} />
+            <br />
+            <TodoInput addTodo={props.actions.addTodo} />
+            <TodoList actions={props.actions} todos={props.todos} />
+        </div>
+    )
 }
+
+// class App extends Component {
+
+//     render() {
+//         return (
+//             <div>
+//                 <h1>Todo List</h1>
+//                 <UserInfo actions={this.props.actions} user={this.props.user} />
+//                 <br />
+//                 <TodoInput addTodo={this.props.actions.addTodo} />
+//                 <TodoList actions={this.props.actions} todos={this.props.todos} />
+//             </div>
+//         )
+//     }
+// }
 
 App.propTypes = {
     actions: React.PropTypes.object,

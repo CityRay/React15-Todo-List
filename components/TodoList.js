@@ -2,16 +2,10 @@ import React, { Component } from 'react'
 import TodoItem from './TodoItem'
 
 class TodoList extends Component {
-    constructor(props) {
-        super(props)
 
-        this.state = {
-            tmp: ''
-        }
-    }
-
-    shouldComponentUpdate(nextProps) {
-        return !(this.props.todos.length === nextProps.todos.length)
+    shouldComponentUpdate() {
+        return true
+        // return !(this.props.todos.length === nextProps.todos.length)
     }
 
     // _handleDel(id, event) {
