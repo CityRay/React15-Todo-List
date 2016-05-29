@@ -95,3 +95,21 @@ To Change state, return a new object
 Object.assign({}, state, {role: 'amdin'})
 ```
 [Reducer](https://github.com/CityRay/React15-Todo-List/blob/master/redux/reducers/todoReducer.js#L24)
+
+### Connected Redux Store
+- mapStateToProps: What state should I expose as props
+- mapDispatchToProps: What actions do I want on props
+```
+function mapStateToProps(state) {
+    return state
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+```
+[connect](https://github.com/CityRay/React15-Todo-List/blob/master/components/App.js#L45)
