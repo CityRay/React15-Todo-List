@@ -68,6 +68,8 @@ Acionts > stores > reducers
 - Reducers return updated state
 
 ###Action Creators
+- Represent user intent
+- Must have a type
 ```
 addTodo: function addTodo(text) {
     return {
@@ -79,6 +81,9 @@ addTodo: function addTodo(text) {
 [actions](https://github.com/CityRay/React15-Todo-List/blob/master/redux/actions/index.js)
 
 ###Creating Redux Store
+One Store. Multiple Reducers.
+- dispatch
+- subscribe
 ```
 import { createStore } from 'redux'
 ```
@@ -88,5 +93,5 @@ import { createStore } from 'redux'
 To Change state, return a new object
 ```
 Object.assign({}, state, {role: 'amdin'})
-[Reducer](https://github.com/CityRay/React15-Todo-List/blob/master/redux/reducers/todoReducer.js#L24)
 ```
+[Reducer](https://github.com/CityRay/React15-Todo-List/blob/master/redux/reducers/todoReducer.js#L24)
