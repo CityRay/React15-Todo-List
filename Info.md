@@ -113,3 +113,8 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 ```
 [connect](https://github.com/CityRay/React15-Todo-List/blob/master/components/App.js#L45)
+
+### Redux Async Libraries
+- redux-thunk (easy learn)
+- redux-promise
+- redux-saga (hard learn)
