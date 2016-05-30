@@ -58,6 +58,7 @@ const App = (props) => {
 - [Stateless Functions](http://facebook.github.io/react/docs/reusable-components.html#stateless-functions)
 - [Stateless React components](https://toddmotto.com/stateless-react-components/)
 - [9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
+- [无状态组件(Stateless Component) 与高阶组件](http://www.jianshu.com/p/63569386befc)
 
 #Redux
 Acionts > stores > reducers
