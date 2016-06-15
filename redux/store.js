@@ -22,7 +22,7 @@ export default function configureStore(initialState = { todos: [], user: {} }) {
         )
 }
 
-// Dev Prod
+// Prod Mode
 // export default function configureStore(initialState = { todos: [], user: {} }) {
 //     return finalCreateStore(rootReducer, initialState)
 // }
