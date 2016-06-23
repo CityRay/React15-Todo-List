@@ -1,12 +1,12 @@
 // import React, { Component } from 'react'
-import React from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { actions } from '../redux/actions'
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actions } from '../redux/actions';
 
-import TodoInput from './TodoInput'
-import TodoList from './TodoList'
-import UserInfo from './UserInfo'
+import TodoInput from './TodoInput';
+import TodoList from './TodoList';
+import UserInfo from './UserInfo';
 
 // Stateless Functional Components
 const App = (props) => {
@@ -18,8 +18,8 @@ const App = (props) => {
             <TodoInput addTodo={props.actions.addTodo} />
             <TodoList actions={props.actions} todos={props.todos} />
         </div>
-    )
-}
+    );
+};
 
 // class App extends Component {
 
@@ -40,11 +40,11 @@ App.propTypes = {
     actions: React.PropTypes.object,
     todos: React.PropTypes.array,
     user: React.PropTypes.object
-}
+};
 
 // bind state 到 props
 function mapStateToProps(state) {
-    return state
+    return state;
 }
 
 // bind dispatch & actions 到 props，連接之後不用再寫 this.props.dispatch，直接傳 actions to child
@@ -52,8 +52,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: bindActionCreators(actions, dispatch)
-    }
+    };
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,9 +1,9 @@
-import { ADD_TODO, COMPLETE_TODO, DEL_TODO } from '../actions'
+import { ADD_TODO, COMPLETE_TODO, DEL_TODO } from '../actions';
 
 function getId(todos) {
     return todos.reduce((maxId, todo) => {
-        return Math.max(todo.id, maxId)
-    }, -1) + 1
+        return Math.max(todo.id, maxId);
+    }, -1) + 1;
 }
 
 // reducers 的功能就是針對這個唯一的 Store 內的 State 的部分內容進行更新
@@ -16,21 +16,21 @@ const todoReducer = function todoReducer(todos = [], action) {
             text: action.text,
             completed: false,
             id: getId(todos)
-        }, ...todos]
+        }, ...todos];
 
     case COMPLETE_TODO:
         return todos.map((todo) => {
             return todo.id === action.id ?
-                Object.assign({}, todo, { completed: !todo.completed }) : todo
-        })
+                Object.assign({}, todo, { completed: !todo.completed }) : todo;
+        });
 
     case DEL_TODO:
         return todos.filter((todo) => {
-            return todo.id !== action.id
-        })
+            return todo.id !== action.id;
+        });
     default:
-        return todos
+        return todos;
     }
-}
+};
 
-export default todoReducer
+export default todoReducer;

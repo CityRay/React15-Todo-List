@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class TodoInput extends Component {
     constructor(props, context) {
-        super(props, context)
+        super(props, context);
 
-        this.onSubmit = this.onSubmit.bind(this)
+        this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             inputText: ''
-        }
+        };
     }
 
     shouldComponentUpdate() {
         // component has no props or state change so it is safe to just return `false`
-        return false
+        return false;
     }
 
     onSubmit(event) {
-        event.preventDefault()
+        event.preventDefault();
 
         // Method 1
         // if (this.state.inputText) {
@@ -28,13 +28,13 @@ class TodoInput extends Component {
         // }
 
         // Method 2
-        const input = this.refs.todoInput
-        const value = input.value.trim()
+        const input = this.refs.todoInput;
+        const value = input.value.trim();
         if (value) {
-            this.props.addTodo(value)
-            input.value = ''
+            this.props.addTodo(value);
+            input.value = '';
         } else {
-            console.warn('inputText is null')
+            console.warn('inputText is null');
         }
     }
 
@@ -62,11 +62,12 @@ class TodoInput extends Component {
                     <input type="submit" value="SEND" />
                 </form>
             </div>
-        )
+        );
     }
 }
 
 TodoInput.propTypes = {
     addTodo: React.PropTypes.func
-}
-export default TodoInput
+};
+
+export default TodoInput;

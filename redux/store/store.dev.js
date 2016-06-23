@@ -1,13 +1,13 @@
-import { applyMiddleware, compose, createStore } from 'redux'
-import rootReducer from './reducers'
-import thunk from 'redux-thunk'
-import logger from 'redux-logger'
+import { applyMiddleware, compose, createStore } from 'redux';
+import rootReducer from '../reducers';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 // TODO: add middleware
 // If DEV Level Can ADD redux-logger
 const finalCreateStore = compose(
         applyMiddleware(thunk, logger())
-    )(createStore)
+    )(createStore);
 
 // Producation Mode
 // const finalCreateStore = compose(
@@ -19,7 +19,7 @@ const finalCreateStore = compose(
 export default function configureStore(initialState = { todos: [], user: {} }) {
     return finalCreateStore(rootReducer, initialState,
         window.devToolsExtension ? window.devToolsExtension() : undefined // Redux DevTool
-        )
+        );
 }
 
 // Prod Mode

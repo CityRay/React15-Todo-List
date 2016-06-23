@@ -1,4 +1,4 @@
-import { CREATE_USER_ID } from '../actions'
+import { CREATE_USER_ID } from '../actions';
 
 const userReducer = function userReducer(user = {}, action) {
     switch (action.type) {
@@ -6,11 +6,11 @@ const userReducer = function userReducer(user = {}, action) {
         return {
             username: user.username,
             memberId: action.id
-        }
+        };
 
     default:
-        return user
+        return user;
     }
-}
+};
 
-export default userReducer
+export default userReducer;

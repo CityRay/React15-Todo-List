@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class UserInfo extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
-        this.onNewId = this.onNewId.bind(this)
-        this.onNewIdIfOdd = this.onNewIdIfOdd.bind(this)
-        this.onNewIdAsync = this.onNewIdAsync.bind(this)
+        this.onNewId = this.onNewId.bind(this);
+        this.onNewIdIfOdd = this.onNewIdIfOdd.bind(this);
+        this.onNewIdAsync = this.onNewIdAsync.bind(this);
     }
 
     // shouldComponentUpdate(nextProps) {
@@ -15,18 +15,18 @@ class UserInfo extends Component {
     // }
 
     onNewId(e) {
-        e.preventDefault()
-        this.props.actions.createNewUserId(1, 1000)
+        e.preventDefault();
+        this.props.actions.createNewUserId(1, 1000);
     }
 
     onNewIdIfOdd(e) {
-        e.preventDefault()
-        this.props.actions.createNewUserIdIfOdd()
+        e.preventDefault();
+        this.props.actions.createNewUserIdIfOdd();
     }
 
     onNewIdAsync(e) {
-        e.preventDefault()
-        this.props.actions.createNewUserIdAsync()
+        e.preventDefault();
+        this.props.actions.createNewUserIdAsync();
     }
 
     render() {
@@ -38,7 +38,7 @@ class UserInfo extends Component {
                 <button onClick={this.onNewIdIfOdd}>Update If Odd</button>
                 <button onClick={this.onNewIdAsync}>Update async</button>
             </div>
-        )
+        );
     }
 
 // Class End
@@ -47,5 +47,6 @@ class UserInfo extends Component {
 UserInfo.propTypes = {
     actions: React.PropTypes.objectOf(React.PropTypes.func),
     user: React.PropTypes.object
-}
-export default UserInfo
+};
+
+export default UserInfo;
