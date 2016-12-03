@@ -36,13 +36,13 @@ module.exports = {
     //     // but get it from a global 'React' variable
     //     'react': 'React'
     // },
-    plugins: [
-        new webpack.optimize.DedupePlugin(),
+    plugins: [        
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
             }
         }),
+        new webpack.optimize.DedupePlugin(), //dedupe similar code
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
@@ -51,6 +51,7 @@ module.exports = {
             comments: false,
             mangle: true,
             minimize: true
-        })
+        }),
+        new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
     ]
 }
